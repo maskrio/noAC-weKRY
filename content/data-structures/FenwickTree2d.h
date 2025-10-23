@@ -12,6 +12,14 @@
 
 #include "FenwickTree.h"
 
+// FT2 tree(n);                // x up to n
+// for (auto [x, y] : updates)
+//     tree.fakeUpdate(x, y);  // announce coordinates
+// tree.init();                // build compressed structure
+
+// tree.update(x, y, +5);
+// ll ans = tree.query(x, y);  // sum of a[i< x][j< y]
+
 struct FT2 {
 	vector<vi> ys; vector<FT> ft;
 	FT2(int limx) : ys(limx) {}
