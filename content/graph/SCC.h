@@ -39,3 +39,10 @@ template<class G, class F> void scc(G& g, F f) {
 	Time = ncomps = 0;
 	rep(i,0,n) if (comp[i] < 0) dfs(i, g, f);
 }
+
+// usage
+vector<vector<int>> g(n);
+vector<vi> groups;
+scc(g, [&](const vi& nodes_in_comp){
+    groups.push_back(nodes_in_comp);          // collect each SCC
+});
