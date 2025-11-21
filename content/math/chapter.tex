@@ -174,3 +174,18 @@ $\lim_{k\rightarrow\infty}\mathbf{P}^k = \mathbf{1}\pi$.
 A Markov chain is an A-chain if the states can be partitioned into two sets $\mathbf{A}$ and $\mathbf{G}$, such that all states in $\mathbf{A}$ are absorbing ($p_{ii}=1$), and all states in $\mathbf{G}$ leads to an absorbing state in $\mathbf{A}$.
 The probability for absorption in state $i\in\mathbf{A}$, when the initial state is $j$, is $a_{ij} = p_{ij}+\sum_{k\in\mathbf{G}} a_{ik}p_{kj}$.
 The expected time until absorption, when the initial state is $i$, is $t_i = 1+\sum_{k\in\mathbf{G}}p_{ki}t_k$.
+
+\section{Centroid of Polygons}
+$C_x = \frac{1} {6A}\sum_{i = 0}^ {n - 1}(x_i + x_{i + 1})(x_i\; y_{i + 1} -x_{i + 1}\;
+    y_i)$ \newline
+$C_y = \frac{1} {6A}\sum_{i = 0}^ {n - 1}(y_i + y_{i + 1})(x_i\; y_{i + 1} -x_{i + 1}\;
+    y_i)$
+
+\section{Pick's Theorem}
+$A$:
+Area of a simply closed lattice polygon \newline
+$B$:
+Number of lattice points on the edges \newline
+$I$:
+Number of points in the interior \newline
+$A = I + \frac{B} {2} - 1$
