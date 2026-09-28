@@ -24,6 +24,7 @@ struct Dinic{
     void init(int _N)
     {
         N = _N;
+		eds.clear();
         adj.assign(N,{});
         cur.assign(N,{});
     }
