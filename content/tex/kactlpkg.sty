@@ -236,6 +236,13 @@
 	\pagestyle{fancy}
 }
 
+\newcommand{\maketeamheader}{
+	\begin{center}
+		{\normalsize \textbf{\@unilong} -- \textbf{\@teamname}}
+	\end{center}
+	\vspace{-10pt}
+}
+
 \newcommand{\kactlref}[1]{
 	\ifthenelse{\boolean{appendixmode}}{}{
 		\ifnum \value{section} > 0
