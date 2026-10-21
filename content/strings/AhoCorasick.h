@@ -38,6 +38,8 @@ struct AhoCorasick {
 		backp.push_back(N[n].end);
 		N[n].end = j;
 		N[n].nmatches++;
+		// N[n].bad |= isBad;
+		// N[n].wantedMask |= mask;
 	}
 	AhoCorasick(vector<string>& pat) : N(1, -1) {
 		rep(i,0,sz(pat)) insert(pat[i], i);
@@ -55,6 +57,8 @@ struct AhoCorasick {
 					(N[ed].end == -1 ? N[ed].end : backp[N[ed].start])
 						= N[y].end;
 					N[ed].nmatches += N[y].nmatches;
+					// N[ed].bad |= N[y].bad;
+    				// N[ed].wantedMask |= N[y].wantedMask;
 					q.push(ed);
 				}
 			}
@@ -83,3 +87,17 @@ struct AhoCorasick {
 		return res;
 	}
 };
+
+// Given a string s and patterns pat, find the minimum number
+// of patterns needed to concatenate into s.
+// AhoCorasick ac(pat);
+// int v = 0;
+// rep(i, 0, sz(s)) {
+// v = ac.N[v].next[s[i] - AhoCorasick::first];
+//     // Enumerate all patterns ending at position i.
+//     for (int id = ac.N[v].end; id != -1; id = ac.backp[id]) {
+//           int len = sz(pat[id]);
+//           if (dp[i + 1 - len] != INF)
+//               dp[i + 1] = min(dp[i + 1], dp[i + 1 - len] + 1);
+//     }
+// }
